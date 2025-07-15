@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3D Spinner</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Spinner Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="canvas-container"></div>
@@ -12,13 +12,13 @@
   <div id="tapText">Tap to See Your Luck</div>
   <div id="resultText"></div>
 
-  <!-- ✅ CORRECT THREE.JS CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js" defer></script>
+  <!-- ✅ Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js" onerror="alert('⚠️ Failed to load THREE.js')" defer></script>
 
-  <!-- ✅ CORRECT CANNON.ES CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.min.js" defer></script>
+  <!-- ✅ Cannon-es -->
+  <script src="https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.min.js" onerror="alert('⚠️ Failed to load Cannon-es')" defer></script>
 
-  <!-- ✅ LOAD MAIN AFTER EVERYTHING -->
+  <!-- ✅ Your game -->
   <script src="main.js" defer></script>
 </body>
 </html>
