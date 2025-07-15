@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D Spinner Game</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="canvas-container"></div>
@@ -12,13 +12,11 @@
   <div id="tapText">Tap to See Your Luck</div>
   <div id="resultText"></div>
 
-  <!-- ✅ Three.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js" onerror="alert('⚠️ Failed to load THREE.js')" defer></script>
+  <!-- ✅ Load local Three.js and Cannon-es -->
+  <script src="three.min.js" defer></script>
+  <script src="cannon-es.umd.js" defer></script>
 
-  <!-- ✅ Cannon-es -->
-  <script src="https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.min.js" onerror="alert('⚠️ Failed to load Cannon-es')" defer></script>
-
-  <!-- ✅ Your game -->
+  <!-- ✅ Your game logic -->
   <script src="main.js" defer></script>
 </body>
 </html>
