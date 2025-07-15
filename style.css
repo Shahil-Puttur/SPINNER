@@ -1,61 +1,106 @@
-body {
-  margin: 0;
-  background-color: #000;
-  overflow: hidden;
-  font-family: Arial;
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#canvas-container {
-  width: 100vw;
-  height: 100vh;
-  display: block;
-  position: relative;
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevents scrollbars */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#ui {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
+/* The 3D canvas will fill the entire screen */
+#c {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
 }
 
-#spinBtn {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 12px 24px;
-  background: #ff007f;
-  color: white;
-  font-size: 20px;
-  border: none;
-  border-radius: 12px;
-  z-index: 10;
-  pointer-events: auto;
-  cursor: pointer;
-  box-shadow: 0 0 20px #ff007f;
+/* Container for all UI elements */
+#ui-container {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
-#tapText,
-#resultText {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  z-index: 10;
-  display: none;
-  pointer-events: none;
+#spin-button {
+    padding: 15px 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(145deg, #ff4757, #e01e2e);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(224, 30, 46, 0.4);
+    transition: all 0.2s ease-in-out;
 }
 
-#tapText {
-  bottom: 80px;
-  font-size: 18px;
+#spin-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(224, 30, 46, 0.5);
 }
 
-#resultText {
-  top: 20px;
-  font-size: 24px;
-  color: yellow;
+#spin-button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: scale(1);
 }
+
+/* The overlay for showing the final result */
+#result-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+#result-message {
+    padding: 40px;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: scale(0.5);
+    opacity: 0;
+    animation: pop-in 0.5s forwards cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+#result-message h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#result-message p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* A helper class to hide elements */
+.hidden {
+    pointer-events: none;
+    opacity: 0 !important;
+}
+
+/* Animation for the result message pop-up */
+@keyframes pop-in {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
