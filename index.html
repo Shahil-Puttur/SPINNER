@@ -1,43 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Lucky Draw Spinner</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Spinner Game</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- This canvas is where the 3D scene will be rendered -->
-    <canvas id="c"></canvas>
+  <div id="canvas-container"></div>
 
-    <!-- UI Elements -->
-    <div id="ui-container">
-        <button id="spin-button">SPIN</button>
-    </div>
+  <div id="ui">
+    <button id="spinBtn">SPIN</button>
+    <div id="tapText">Tap to See Your Luck</div>
+    <div id="resultText"></div>
+  </div>
 
-    <!-- Result Overlay: Initially hidden -->
-    <div id="result-overlay" class="hidden">
-        <div id="result-message">
-            <!-- Content will be set by JavaScript -->
-        </div>
-    </div>
-    
-    <!-- 
-      Libraries: 
-      We load them from a CDN (Content Delivery Network) to ensure they are always available.
-      This is the most reliable method for GitHub Pages.
-    -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cannon-es@0.19.0/dist/cannon-es.umd.js"></script>
-    <!-- OrbitControls is not in the core three.min.js, so we load it separately -->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-
-    <!-- 
-      Our Main Script:
-      The 'defer' attribute is crucial. It ensures this script only runs AFTER the entire
-      HTML page (including the canvas element) is loaded and ready. 
-      Without 'defer', the script might run before `<canvas id="c">` exists, causing an error.
-    -->
-    <script src="main.js" defer></script>
+  <!-- Load local libraries in correct order -->
+  <script src="three.min.js"></script>
+  <script src="cannon-es.umd.js"></script>
+  <script src="main.js"></script>
 </body>
-</html>
+    </html>
