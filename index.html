@@ -7,23 +7,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- 🔷 3D Canvas -->
   <div id="canvas-container"></div>
-
-  <!-- 🔘 Spin Button -->
   <button id="spinBtn">SPIN</button>
-
-  <!-- 🎯 Tap to reveal -->
   <div id="tapText">Tap to See Your Luck</div>
-
-  <!-- 🎉 Result display -->
   <div id="resultText"></div>
 
-  <!-- ✅ Load 3D Libraries FIRST -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.min.js"></script>
+  <!-- ✅ CORRECT THREE.JS CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js" defer></script>
 
-  <!-- ✅ Load Your Game Script LAST -->
-  <script src="main.js"></script>
+  <!-- ✅ CORRECT CANNON.ES CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.min.js" defer></script>
+
+  <!-- ✅ LOAD MAIN AFTER EVERYTHING -->
+  <script src="main.js" defer></script>
 </body>
 </html>
