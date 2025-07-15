@@ -1,3 +1,10 @@
+// ✅ Check if THREE is loaded before doing anything
+if (typeof THREE === 'undefined' || typeof CANNON === 'undefined') {
+  alert("Three.js or Cannon-es failed to load. Please check your script tags!");
+  throw new Error("Three.js or Cannon-es not loaded.");
+}
+
+// ✅ Basic Setup
 let scene, camera, renderer, world;
 let balls = [], ballBodies = [];
 let holeY = -5;
@@ -36,12 +43,15 @@ function init() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.getElementById('canvas-container').appendChild(renderer.domElement);
 
+  // 🌍 Cannon-es physics world
   world = new CANNON.World({ gravity: new CANNON.Vec3(0, -9.82, 0) });
 
+  // 💡 Lighting
   const light = new THREE.PointLight(0xffffff, 1.2);
   light.position.set(10, 20, 10);
   scene.add(light);
 
+  // 🧪 Create everything
   createBowl();
   createHole();
   createBalls();
@@ -135,4 +145,4 @@ function animate() {
   }
 
   renderer.render(scene, camera);
-                          }
+    }
